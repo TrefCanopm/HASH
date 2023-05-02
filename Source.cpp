@@ -16,16 +16,16 @@ Element* Mas;
 
 int N = 0;
 
-int Hash(int sum, int HashTable); // нахождение ключа
-int Sum(string str); // сумма элементов ФИО для подбора ключа
+int Hash(int sum, int HashTable); 
+int Sum(string str);
 
-void CinHash(int i); // Ввод одного элемента
-void CinHashK(int i); // Ввод нескольких элементов
+void CinHash(int i); 
+void CinHashK(int i); 
 
-void CoutHash(int i); // Вывод ХЭШ таблицы
+void CoutHash(int i); 
 void Chek(int i);
 
-void Menu(); // Меню
+void Menu();
 
 int main()
 {
@@ -34,7 +34,7 @@ int main()
 	bool F = 1;
 	int i;
 	int n;
-	cout << "Введите сколько элементов может хранится в ХЭШ таблице" << endl;
+	cout << "Enter how many elements can be stored in the HASH table" << endl;
 	cin >> i;
 	Mas = new Element[i];
 	while (F)
@@ -72,7 +72,7 @@ int main()
 			break;
 		}
 		default:
-			cout << "Введите номер элемента который есть в меню" << endl;
+			cout << "Enter the number of the item that is in the menu" << endl;
 		}
 	}
 	delete[] Mas;
@@ -80,12 +80,12 @@ int main()
 
 void Menu()
 {
-	cout << "\tМеню" << endl;
-	cout << "1) Ввести 1 элемент в таблицу" << endl;
-	cout << "2) Ввести несколько элементов в таблицу" << endl;
-	cout << "3) Вывести таблицу на экран" << endl;
-	cout << "4) Поиск элемента по ключу" << endl;
-	cout << "5) Законьчить работу с таблицей" << endl;
+	cout << "\t Menu" << endl;
+	cout << "1) Enter 1 element into the table" << endl;
+	cout << "2) Enter several elements into the table" << endl;
+	cout << "3) Display the table on the screen" << endl;
+	cout << "4) Searching for an element by key" << endl;
+	cout << "5) Finish working with the table" << endl;
 }
 
 void CinHash(int i)
@@ -93,12 +93,12 @@ void CinHash(int i)
 	bool f = 1;
 	int k;
 	Element element;
-	cout << "Ввидите данные элементов" << endl;
-	cout << "Введите ФИО" << endl;
+	cout << "Enter the data of the elements" << endl;
+	cout << "Enter your full name" << endl;
 	getline(cin >> ws, element.FIO);
-	cout << "Введите дату рождения" << endl;
+	cout << "Enter your date of birth" << endl;
 	getline(cin >> ws, element.data);
-	cout << "Введите адресс проживания" << endl;
+	cout << "Enter your residential address" << endl;
 	getline(cin >> ws, element.adress);
 	int sum = Sum(element.FIO);
 	int key = Hash(sum, i);
@@ -146,16 +146,16 @@ void CinHashK(int i)
 	bool f = 1;
 	int k;
 	Element element;
-	cout << "Введите количество вводимых элементов" << endl;
+	cout << "Enter the number of items to be entered" << endl;
 	cin >> n;
 	while (n > 0)
 	{
-		cout << "Ввидите данные элементов" << endl;
-		cout << "Введите ФИО" << endl;
+		cout << "Enter the data of the elements" << endl;
+		cout << "Enter your full name" << endl;
 		getline(cin >> ws, element.FIO);
-		cout << "Введите дату рождения" << endl;
+		cout << "Enter your date of birth" << endl;
 		getline(cin >> ws, element.data);
-		cout << "Введите адресс проживания" << endl;
+		cout << "Enter your residential address" << endl;
 		getline(cin >> ws, element.adress);
 		int sum = Sum(element.FIO);
 		int key = Hash(sum, i);
@@ -204,7 +204,7 @@ void Chek(int i)
 {
 	bool f = 1;
 	string a;
-	cout << "Введите ключ ФИО:" << endl;
+	cout << "Enter your full name key:" << endl;
 	getline(cin >> ws, a);
 	int sum = Sum(a);
 	int key = Hash(sum, i);
@@ -245,7 +245,7 @@ void Chek(int i)
 		}
 		if (f)
 		{
-			cout << "Искомого элемента нет в таблице или ключ введён неверно" << endl;
+			cout << "The required element is not in the table or the key is entered incorrectly" << endl;
 		}
 	}
 }
