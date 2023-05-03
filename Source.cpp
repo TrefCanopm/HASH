@@ -41,7 +41,7 @@ int main()
 	{
 
 		Menu();
-		cout << "" << endl;
+		cout << "Enter the action number" << endl;
 		cin >> n;
 		system("cls");
 		switch (n)
